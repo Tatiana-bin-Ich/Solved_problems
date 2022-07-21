@@ -1,0 +1,4 @@
+#   Return true if a string has the same amount of x's and o's
+
+def xo(s):
+    return s.count('x') + s.count('X') == s.count('o') + s.count('O')
