@@ -1,0 +1,17 @@
+from random import randint
+number = randint(1, 100)
+print('Добро пожаловать в числовую угадайку!')
+name = input('А кто ты?')
+print('Привет,', name + '!\nЯ загадала число от 1 до 100. Угадаешь с 7 попыток?')
+for guess in range(1, 8):
+    curguess = int(input('Какое твоё число?'))
+    def is_valid(curguess):
+        return 0 < curguess < 100 if str(curguess).isdigit() else False
+    if curguess > number:
+        print('Перещеголял(а), давай меньше', curguess)
+    if curguess < number:
+        print('Дал(а) маху, нужно число побольше', curguess)
+    if curguess == number:
+        print('Невероятно! Хорош(а), малютка', name, '!', 'Всё чётко, загаданное число -', number + '.', guess, 'попыток, снимаю шляпу')
+else:
+    print('Кажется, в следующий раз повезёт, малютка', name + '. Это было число', number)
